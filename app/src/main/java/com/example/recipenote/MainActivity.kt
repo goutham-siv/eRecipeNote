@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setButtonFunctionality() {
         btnSignUp.setRxOnClickListener {
-            if(etPassword.text!!.isNotEmpty() && etUserName.text!!.isNotEmpty())
+            if( etUserName.text!!.isNotEmpty())
             {
                 GlobalScope.launch(Dispatchers.IO) {
                     mLoginViewModel.setUserName(

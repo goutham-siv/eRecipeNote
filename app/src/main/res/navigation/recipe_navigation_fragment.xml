@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_recipeFramgent_to_writeYourRecipe"
             app:destination="@id/writeYourRecipe" />
+        <action
+            android:id="@+id/action_recipeFramgent_to_recipeDetailsPage"
+            app:destination="@id/recipeDetailsPage" />
     </fragment>
     <fragment
         android:id="@+id/profilePageFragment"
@@ -23,4 +26,8 @@
         android:name="com.example.recipenote.homepage.WriteYourRecipe"
         android:label="fragment_write_your_recipe"
         tools:layout="@layout/fragment_write_your_recipe" />
+    <fragment
+        android:id="@+id/recipeDetailsPage"
+        android:name="com.example.recipenote.homepage.RecipeDetailsPage"
+        android:label="RecipeDetailsPage" />
 </navigation>

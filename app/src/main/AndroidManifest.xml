@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.recipenote">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+
     <application
         android:name="com.example.recipenote.App"
         android:allowBackup="true"
@@ -14,7 +20,7 @@
         tools:ignore="AllowBackup">
         <activity android:name="com.example.recipenote.homepage.RecipeActivity"
             android:screenOrientation="locked"
-            android:windowSoftInputMode="adjustPan|stateHidden|adjustResize"
+            android:windowSoftInputMode="adjustPan"
         />
         <activity android:name="com.example.recipenote.SplashScreenActivity">
             <intent-filter>

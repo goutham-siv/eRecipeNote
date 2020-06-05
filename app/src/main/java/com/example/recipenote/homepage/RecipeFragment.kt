@@ -1,11 +1,14 @@
 package com.example.recipenote.homepage
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.recipenote.R
@@ -29,10 +32,33 @@ class RecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setAdapter()
-        btnAdd.setRxOnClickListener {
+        loadButtonFunctionality()
+
+    }
+
+    private fun loadButtonFunctionality() {
+       svSearch.setOnQueryTextListener(object: SearchView.OnQueryTextListener,
+           android.widget.SearchView.OnQueryTextListener {
+           override fun onQueryTextSubmit(query: String?): Boolean {
+               return false
+           }
+
+           override fun onQueryTextChange(query: String?): Boolean {
+               if(query.isNullOrEmpty()) {
+                   loadData()
+               }
+               else{
+                   loadRecipeData(query)
+               }
+               return true
+           }
+       })
+               btnAdd.setRxOnClickListener {
             findNavController().navigate(R.id.action_recipeFramgent_to_writeYourRecipe)
         }
+
     }
+
     private fun setAdapter() {
         rvRecipeItems.adapter =mAdapter
        /* mViewModel.getRecipeList().observe(this, Observer {
@@ -41,12 +67,33 @@ class RecipeFragment : Fragment() {
         })*/
 
     }
-
-    override fun onResume() {
-        super.onResume()
+    private  fun loadData() {
         mViewModel.getRecipeList().observe(this, Observer {
             mAdapter.setData(it)
             mAdapter.notifyDataSetChanged()
+            mAdapter.setProfileCallback { data ->
+                Log.i("tag", " data for recipe model $data")
+                mViewModel.setDetails(data)
+                findNavController().navigate(R.id.action_recipeFramgent_to_recipeDetailsPage)
+            }
         })
+    }
+        private  fun loadRecipeData( recipe:String)
+        {
+            mViewModel.getRecipe(recipe).observe(this, Observer {
+                mAdapter.setData(it)
+                mAdapter.notifyDataSetChanged()
+                mAdapter.setProfileCallback { data ->
+                    Log.i("tag", " data for recipe model $data")
+                    mViewModel.setDetails(data)
+                    findNavController().navigate(R.id.action_recipeFramgent_to_recipeDetailsPage)
+                }
+            })
+    }
+
+    override fun onResume() {
+        loadData()
+        super.onResume()
+
     }
 }

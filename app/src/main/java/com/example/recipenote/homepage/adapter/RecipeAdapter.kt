@@ -8,14 +8,20 @@ import com.example.recipenote.model.RecipeModel
 import com.example.recipenote.viewobserver.RecipeViewObserver
 
 class RecipeAdapter(): BaseRecyclerAdapter<RecipeModel, RecipeViewHolder>(){
-    private  var mViewObserver =RecipeViewObserver()
+    private lateinit var mDetailsCallback: (RecipeModel) -> Unit?
+
+
     override fun createView(
         inflater: LayoutInflater,
         container: ViewGroup,
         viewType: Int
     ): RecipeViewHolder {
         val binding = RecipeListItemBinding.inflate(inflater, container, false)
-        binding.data = mViewObserver
-        return RecipeViewHolder(binding)
+        binding.data = RecipeViewObserver()
+        return RecipeViewHolder(binding,mDetailsCallback)
     }
+    fun setProfileCallback(callback: (RecipeModel) -> Unit?) {
+        mDetailsCallback = callback
+    }
+
 }

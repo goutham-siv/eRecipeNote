@@ -5,18 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".homepage.WriteYourRecipe">
 
-
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imRecipe"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_profile"
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/atText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_weight="0.5"
         android:gravity="center"
-        android:text="Recipe"
+        android:text="@string/recipe"
+        android:layout_marginTop="10dp"
         android:textColor="#000000"
         android:textSize="30sp" />
 
@@ -24,12 +31,11 @@
         android:id="@+id/etRecipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity=""
+        android:textCursorDrawable="@color/black"
         android:hint="@string/write_your_recipe"
         android:inputType="textCapSentences|textMultiLine"
-        android:maxLength="2000"
-        android:maxLines="4" />
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/atIngredients"
@@ -37,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
         android:gravity="center"
-        android:text="Ingredients"
+        android:text="@string/ingredients"
         android:layout_marginTop="10dp"
         android:textColor="#000000"
         android:textSize="30sp" />
@@ -46,18 +52,17 @@
         android:id="@+id/etIngredients"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:hint="@string/write_your_recipe"
+        android:textCursorDrawable="@color/black"
         android:inputType="textCapSentences|textMultiLine"
-        android:maxLength="2000"
-        android:maxLines="4" />
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
         android:gravity="center"
-        android:text="How to Make"
+        android:text="@string/how_to_make"
         android:textColor="#000000"
         android:layout_marginTop="20dp"
         android:textSize="30dp" />
@@ -66,20 +71,21 @@
         android:id="@+id/etHowToMake"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:hint="@string/write_your_recipe"
-        android:inputType="textCapSentences|textMultiLine"
-        android:maxLength="2000"
-        android:maxLines="4" />
+        android:textCursorDrawable="@color/black"
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:inputType="textCapSentences|textMultiLine" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSubmit"
-        android:layout_width="50dp"
+        style="@style/fontBold16"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:hint="@string/write_your_recipe"
+        android:text="@string/submit_your_recipe"
+        android:background="@drawable/fab_button_background"
         android:inputType="textCapSentences|textMultiLine"
         android:src="@drawable/ic_add"
         app:fabSize="normal"

@@ -1,10 +1,11 @@
 package com.example.recipenote.viewobserver
 
+import android.util.Log
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import com.example.recipenote.model.RecipeModel
 
-class RecipeViewObserver :BaseObservable() {
+class RecipeViewObserver() :BaseObservable() {
     private  var mModel :RecipeModel ? = null
 
     @Bindable
@@ -20,6 +21,7 @@ class RecipeViewObserver :BaseObservable() {
     fun setData(data :RecipeModel)
     {
         mModel =data
+        Log.i("Tag","mModel :$mModel")
         notifyChange()
     }
 }

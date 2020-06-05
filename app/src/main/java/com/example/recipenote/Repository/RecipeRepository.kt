@@ -17,4 +17,14 @@ class RecipeRepository (    private val mAppDatabase: AppDatabase)
      * set Item
      */
     fun setItemList(Recipe :RecipeModel)=mAppDatabase.recipeDao().insert(Recipe)
+
+    /**
+     * delete Receipt
+     */
+    fun deleteRecipe(recipe:String) =mAppDatabase.recipeDao().deleteRecipe(recipe)
+
+    /**
+     * get recipe from dao
+     */
+    fun getRecipe(recipe: String)=mAppDatabase.recipeDao().getRecipe(recipe)
 }

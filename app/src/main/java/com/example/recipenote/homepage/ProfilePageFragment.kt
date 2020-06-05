@@ -1,12 +1,17 @@
 package com.example.recipenote.homepage
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import coil.api.load
 import com.example.recipenote.MainActivity
 import com.example.recipenote.Utils.setRxOnClickListener
 import com.example.recipenote.databinding.FragmentProfilePageFramentBinding
@@ -18,6 +23,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+
 
 class ProfilePageFragment : Fragment() {
 
@@ -52,9 +58,25 @@ class ProfilePageFragment : Fragment() {
                 mViewModel.deleteAccount()
                 delay(1000)
                 activity?.finishAffinity()
-                startActivity(Intent(context!!,MainActivity::class.java))
+                startActivity(Intent(requireContext(),MainActivity::class.java))
             }
 
+        }
+        tvUserName.setRxOnClickListener {
+            val intent =Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intent,0)
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        data?.let{
+
+            val bitmap: Bitmap=data?.extras?.get("data") as Bitmap
+            appCompatImageView.load(bitmap){
+
+            }
         }
     }
 
