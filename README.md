@@ -1,5 +1,5 @@
-# eRecipeNote
-E-Recipe Note is a recipe reminder app  which will be helpfull when people want to rembered the recipe for future use.E-recipe allow user remember the indegredients and howTomake  recipe in more userfriendly manner and all datas will be stored in internal database , so that the user can retrieved  the details whenever they needed. In Addtionally,User can take the pic of the recipe and store as they wish.
+# E-RecipeNote
+E-RecipeNote is a recipe reminder app  which will be helpfull when people want to rembered the recipe for future use.E-RecipeNote allow user remember the indegredients and howTomake  recipe in more userfriendly manner and all datas will be stored in internal database , so that the user can retrieved  the details whenever they needed. In Addtionally,User can take the pic of the recipe and store as they wish.
 
 Components Used
 
