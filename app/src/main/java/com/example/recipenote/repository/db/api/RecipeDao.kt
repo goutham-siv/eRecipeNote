@@ -23,7 +23,7 @@ interface RecipeDao {
     @Query("DELETE  FROM RecipeModel Where Recipe = :recipe" )
     fun deleteRecipe(recipe:String)
 
-    @Query("SELECT * from RecipeModel Where Recipe = :recipe ORDER BY Recipe ASC")
+    @Query("SELECT * from RecipeModel Where Recipe Like:recipe||'%' ORDER BY Recipe ASC")
     fun getRecipe(recipe: String) :LiveData<List<RecipeModel>>
 
 }

@@ -2,8 +2,6 @@ package com.example.recipenote.homepage
 
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
@@ -12,7 +10,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import coil.api.load
-import com.example.recipenote.MainActivity
+import com.example.recipenote.LoginPage.MainActivity
 import com.example.recipenote.Utils.setRxOnClickListener
 import com.example.recipenote.databinding.FragmentProfilePageFramentBinding
 import com.example.recipenote.viewmodel.LoginViewModel
@@ -58,7 +56,8 @@ class ProfilePageFragment : Fragment() {
                 mViewModel.deleteAccount()
                 delay(1000)
                 activity?.finishAffinity()
-                startActivity(Intent(requireContext(),MainActivity::class.java))
+                startActivity(Intent(requireContext(),
+                    MainActivity::class.java))
             }
 
         }
