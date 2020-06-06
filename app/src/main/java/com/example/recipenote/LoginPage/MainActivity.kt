@@ -1,10 +1,11 @@
-package com.example.recipenote
+package com.example.recipenote.LoginPage
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import com.example.recipenote.R
 import com.example.recipenote.Utils.setRxOnClickListener
 import com.example.recipenote.homepage.RecipeActivity
 import com.example.recipenote.viewmodel.LoginViewModel

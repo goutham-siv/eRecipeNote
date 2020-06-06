@@ -1,4 +1,4 @@
-package com.example.recipenote
+package com.example.recipenote.splashScreenAcitivty
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import com.example.recipenote.LoginPage.MainActivity
+import com.example.recipenote.R
 import com.example.recipenote.databinding.ActivitySplashScreenBinding
 import com.example.recipenote.homepage.RecipeActivity
 import com.example.recipenote.viewmodel.LoginViewModel

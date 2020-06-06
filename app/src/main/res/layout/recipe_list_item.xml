@@ -36,7 +36,7 @@
         android:id="@+id/tvRecipeName"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="Ingrediants"
+        android:text="@{data.recipeName}"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:layout_marginBottom="16dp"
