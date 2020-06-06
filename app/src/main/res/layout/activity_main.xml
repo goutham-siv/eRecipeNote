@@ -53,6 +53,7 @@
         android:layout_marginRight="22dp"
         android:background="#ffffff"
         android:ems="10"
+        android:textCursorDrawable="@color/black"
         android:hint="@string/userid"
         android:inputType="textPersonName"
         android:padding="12dp"

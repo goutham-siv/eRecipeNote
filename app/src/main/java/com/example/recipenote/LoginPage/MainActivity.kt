@@ -1,5 +1,4 @@
 package com.example.recipenote.LoginPage
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -36,11 +35,6 @@ class MainActivity : AppCompatActivity() {
                     delay(3000L)
 
                 }
-                mLoginViewModel.getList().observe(this, Observer {
-                    run {
-                        Toast.makeText(this, "${it}", Toast.LENGTH_LONG).show()
-                    }
-                })
                 startActivity(Intent(this,RecipeActivity::class.java))
 
             }
