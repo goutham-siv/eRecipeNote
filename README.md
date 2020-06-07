@@ -14,3 +14,7 @@ Components Used
 5.koin -A light weight Framework for dependency injection
 
 6.DataBinding -allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+
+ScreenShots
+/home/goutham/Downloads/Screenshot_20200607-133110.jpg
+/home/goutham/Downloads/Screenshot_20200607-133202.jpg
