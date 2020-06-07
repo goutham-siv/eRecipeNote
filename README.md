@@ -15,5 +15,7 @@ E-RecipeNote is a recipe reminder app  which will be helpfull when people want t
 
 6.DataBinding -allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
 
-<b>SCREENSHOTS</b>
-![](images/recipe_1.jpg) ![](images/recipe_2.jpg) ![](images/recipe_3.jpg)
+<b>SCREENSHOTS</b><br>
+<img src ="images/recipe_2.jpg" width ="150" height ="200"/>
+<img src ="images/recipe_1.jpg" width ="150" height ="200"/>
+<img src ="images/recipe_3.jpg" width ="150" height ="200"/>
